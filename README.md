@@ -12,6 +12,7 @@ exported videos.
 | [brief-to-launch-video](skills/brief-to-launch-video) | Product brief → 30-60s launch-style motion-graphics video | Clueso MCP only |
 | [article-to-video](skills/article-to-video) | Help article / blog post / changelog → narrated explainer video | Clueso MCP only |
 | [polish-screen-demo](skills/polish-screen-demo) | Raw screen recording → polished, narrated product demo | Clueso MCP only |
+| [screenshots-to-walkthrough](skills/screenshots-to-walkthrough) | Ordered UI screenshots → narrated cursor-walkthrough video | Clueso MCP only |
 
 ## Installation
 
