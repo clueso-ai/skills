@@ -1,0 +1,25 @@
+{
+  "name": "clueso-video-skills",
+  "owner": {
+    "name": "Clueso",
+    "url": "https://clueso.io"
+  },
+  "metadata": {
+    "description": "Video creation and editing skills that run on the Clueso MCP and nothing else.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "clueso-video-skills",
+      "source": "./",
+      "description": "Create and edit videos with Clueso: launch videos from briefs, explainers from articles, polished demos from raw screen recordings.",
+      "author": {
+        "name": "Clueso",
+        "url": "https://clueso.io"
+      },
+      "homepage": "https://clueso.io/skills",
+      "license": "Apache-2.0",
+      "keywords": ["video", "clueso", "mcp", "launch-video", "explainer", "screen-recording"]
+    }
+  ]
+}
