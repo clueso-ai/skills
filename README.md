@@ -57,7 +57,7 @@ scripts/         CI validation
 
 ## Contributing
 
-1. Copy `template/` to `skills/<your-skill-name>/`.
+1. Copy `template/SKILL.template.md` to `skills/<your-skill-name>/SKILL.md`.
 2. Follow [spec/SKILL_SPEC.md](spec/SKILL_SPEC.md) — in particular the dependency
    rule: a skill must declare everything it needs in `metadata.requires` /
    `metadata.external-apis`, and Clueso-MCP-only skills are strongly preferred.
