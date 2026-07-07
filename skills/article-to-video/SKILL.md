@@ -116,4 +116,4 @@ offer to attach the export via `update_article` / `add_article_media`.
   tell the user real screenshots would upgrade specific scenes and which ones.
 - **`get_article` returns nothing / wrong article** → ask the user to paste the text.
 - **Voiceover pacing collides with a dense scene** → split the clip (`split_clip`) and
-  spread the reveals rather than speeding the voice
+  spread the reveals rather than speeding the voice.
