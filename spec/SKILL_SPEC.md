@@ -57,6 +57,6 @@ repo keep a consistent shape:
 ## Hygiene (enforced by CI)
 
 - No `.venv/`, `node_modules/`, `.env*`, compiled artifacts, or media binaries.
-- No single file over 1 MB; no skill folder over 5 MB
+- No single file over 1 MB; no skill folder over 5 MB.
 - `SKILL.md` present, frontmatter parses, required fields valid, `name` matches the
   folder.
