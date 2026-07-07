@@ -1,20 +1,32 @@
 name: Trigger site rebuild
 
+# On every push to main, tell video-skills-site to rebuild so new/changed skill
+# content goes live. Uses a cross-repo repository_dispatch (item 5 of ENG-9003).
+#
+# Requires a repo secret SITE_DISPATCH_TOKEN: a fine-grained PAT (or GitHub App
+# token) scoped to desklamp-developers/video-skills-site with
+# "Contents: read and write" (this grants repository_dispatch). Until it's set
+# the step no-ops so pushes never fail.
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy-hook:
+  dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: POST deploy hook (no-op until DEPLOY_HOOK_URL secret is set)
+      - name: Dispatch site rebuild
         env:
-          DEPLOY_HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+          SITE_DISPATCH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
         run: |
-          if [ -n "$DEPLOY_HOOK_URL" ]; then
-            curl -fsS -X POST "$DEPLOY_HOOK_URL"
-            echo "Site rebuild triggered."
-          else
-            echo "DEPLOY_HOOK_URL secret not set; skipping."
+          if [ -z "$SITE_DISPATCH_TOKEN" ]; then
+            echo "SITE_DISPATCH_TOKEN not set; skipping site rebuild dispatch."
+            exit 0
           fi
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $SITE_DISPATCH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/desklamp-developers/video-skills-site/dispatches \
+            -d '{"event_type":"skills-updated"}'
+          echo "Dispatched skills-updated to video-skills-site."
