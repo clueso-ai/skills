@@ -1,0 +1,20 @@
+name: Trigger site rebuild
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST deploy hook (no-op until DEPLOY_HOOK_URL secret is set)
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: |
+          if [ -n "$DEPLOY_HOOK_URL" ]; then
+            curl -fsS -X POST "$DEPLOY_HOOK_URL"
+            echo "Site rebuild triggered."
+          else
+            echo "DEPLOY_HOOK_URL secret not set; skipping."
+          fi
