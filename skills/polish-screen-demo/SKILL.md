@@ -20,22 +20,28 @@ metadata:
 
 Take an unedited screen recording and return a demo you'd put on a landing page:
 tightened pacing, camera motion, visual emphasis, narration, and clean bookends.
-Everything runs through Clueso MCP tools.
+Everything runs through Clueso.
 
-## Requirements
+## Before you start
 
-- Clueso MCP connected. Nothing else.
+Ensure you can access Clueso MCP. If not, ask the user to add the Clueso MCP
+connector with this URL: https://connect.clueso.io/mcp. If you can add it yourself,
+do it and ask the user to authenticate. If the user wants to learn more, go to
+https://help.clueso.io/mcp-setup.
 
 ## Inputs
 
-1. **The recording** — either:
-   - a file the user provides → `upload_file`, then poll `check_uploads` until
-     processed; or
-   - a fresh capture → `record_screen` (available when the workspace has recording
-     enabled — check with `get_capabilities`; if unavailable, ask for a file instead).
+1. **The recording — ask first**: is it an existing Clueso project (have the user
+   name or link it), or a raw screen recording they'll upload? Branch accordingly:
+   - **Existing Clueso project** → open it and work on its timeline directly; don't
+     create a duplicate project unless the user asks to preserve the original.
+   - **Raw recording** → have the user provide the file, upload it, and wait until
+     processing finishes. If the workspace supports capturing a fresh screen
+     recording and the user has nothing recorded yet, offer that; otherwise ask for
+     a file.
 2. **What the demo shows** — the feature/flow name and the 1-line takeaway per major
-   step. If the user can't list steps, derive them by watching the recording's
-   structure (clip timestamps + any narration via `analyze_audio`) and confirm your
+   step. If the user can't list steps, derive them from the recording's structure
+   (clip timestamps plus any spoken audio, transcribed and analyzed) and confirm your
    step list with the user before editing.
 3. **Tone** — narrated product demo (default) or captions-only silent demo.
 
@@ -43,75 +49,73 @@ Everything runs through Clueso MCP tools.
 
 ### 1. Confirm workspace, ingest the recording
 
-`find(type='workspaces')` → confirm → `create_project` → ingest the recording
-(`upload_file`/`record_screen`, `check_uploads` until ready), `add_clips` to place it
-on the timeline.
+List the workspaces and confirm the active one with the user. Then, per the branch
+above: open the existing project, or create a project, ingest the recording, and
+place it on the timeline.
 
-If the recording has spoken audio, run `analyze_audio` first — the existing narration
-tells you where the step boundaries and dead time are.
+If the recording has spoken audio, analyze it first — the existing narration tells
+you where the step boundaries and dead time are.
 
 ### 2. Cut the dead time
 
-Raw captures are mostly waiting. Use `split_clip` at each step boundary, then:
+Raw captures are mostly waiting. Split the footage at each step boundary, then:
 
 - Remove or compress stretches where nothing meaningful happens (page loads, typing
-  long form fields, mouse wandering) — `remove_clip` the dead segments or tighten with
-  `update_clips`.
+  long form fields, mouse wandering).
 - Target: no shot where the screen is effectively idle for more than ~2 seconds.
 - Keep one breath (~0.5s) after each completed action so viewers register the result.
 
 ### 3. Write the narration against the cut
 
 One or two sentences per step: what's being done and why it matters. Present tense,
-second person. `estimate_duration` per step — where narration outruns footage, either
-tighten the words or let the footage of that step run slightly longer; never rush the
-voice.
+second person. Estimate the spoken duration per step — where narration outruns
+footage, either tighten the words or let the footage of that step run slightly
+longer; never rush the voice.
 
 Skip this if the user chose captions-only.
 
 ### 4. Direct the viewer's eye
 
-Fetch `get_element_schema`, then per step:
+Per step:
 
-- **Zoom & pan** — keyframe scale/position so the camera pushes toward the region
-  being used, holds, and releases. One move per step; constant zooming reads as
+- **Zoom & pan** — keyframe the framing so the camera pushes toward the region being
+  used, holds, and releases. One move per step; constant zooming reads as
   seasickness, a static full-screen recording reads as unedited.
 - **Highlights** — a keyframed rectangle or ring landing on the control as it's
   clicked, timed to the narration's action word.
-- **Captions** — short step labels (3-6 words) entering with `animation_setting`
-  presets (`slide`, `masked_reveal`), swapped out as steps change. For captions-only
-  demos these carry the narration's job: slightly longer, but still one line at a time.
+- **Captions** — short step labels (3-6 words) entering with a slide or masked
+  reveal, swapped out as steps change. For captions-only demos these carry the
+  narration's job: slightly longer, but still one line at a time.
 
 ### 5. Bookends
 
 - **Intro clip** (~3s): product/feature name + one-line promise, kinetic type on the
-  committed palette (brand colors if the workspace has them; otherwise
-  `get_design_guide` and pick).
+  committed palette (brand colors if the workspace has them; otherwise consult
+  Clueso's design guide and pick).
 - **Outro clip** (~3s): the CTA. One action.
 
 ### 6. Audio pass
 
-- Narrated: `set_voice` → `voiceover_batch` for all steps → `auto_sync`, then
-  `add_sync_point` so each zoom/highlight lands on its action word.
-- Optional bed: `add_audio` for subtle background music; `analyze_audio` /
-  `update_audio` to keep it well under the voice.
-- Captions-only: music bed slightly more present, sync captions to the action instead
-  of a voice.
+- Narrated: pick a voice, generate the narration for all steps in one pass, run an
+  automatic sync, then pin each zoom/highlight so it lands on its action word.
+- Captions-only: the demo stays silent — sync captions to the on-screen action
+  instead of a voice.
+- No music beds or sound effects in either mode.
 
-### 7. Verify and export
+### 7. Verify, review, then export
 
-`get_clip(render=true, timestamp=…)` at each step's action moment: is the zoom framing
-the right region, is the highlight on the control, is the caption legible and current?
-Watch the pacing math: total runtime should be a fraction of the raw capture (a 4-min
-raw take usually makes a 60-90s demo). Fix, then `export_project` and hand over the
-link.
+Render a frame at each step's action moment: is the zoom framing the right region,
+is the highlight on the control, is the caption legible and current? Watch the pacing
+math: total runtime should be a fraction of the raw capture (a 4-min raw take usually
+makes a 60-90s demo). Fix what's off, then share the project review link with the
+user. Export only once they confirm, and hand over the export link.
 
 ## Fallbacks
 
-- **`record_screen` unavailable** → ask for an uploaded file; don't attempt any local
-  recording tooling.
-- **Upload fails or stalls** → report the `check_uploads` state and ask the user to
-  retry; don't silently proceed without the footage.
+- **Fresh screen capture unavailable** → ask for an uploaded file; don't attempt any
+  local recording tooling.
+- **Upload fails or stalls** → report the upload state and ask the user to retry;
+  don't silently proceed without the footage.
 - **Recording quality too low to zoom** (tiny text, low resolution) → keep zooms
   gentle, lean harder on highlights and captions, and tell the user a higher-resolution
   capture would let the demo push in closer.
