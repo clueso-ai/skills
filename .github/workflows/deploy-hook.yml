@@ -4,7 +4,7 @@ name: Trigger site rebuild
 # content goes live. Uses a cross-repo repository_dispatch (item 5 of ENG-9003).
 #
 # Requires a repo secret SITE_DISPATCH_TOKEN: a fine-grained PAT (or GitHub App
-# token) scoped to desklamp-developers/video-skills-site with
+# token) scoped to clueso-ai/video-skills-site with
 # "Contents: read and write" (this grants repository_dispatch). Until it's set
 # the step no-ops so pushes never fail.
 on:
@@ -27,6 +27,6 @@ jobs:
             -H "Authorization: Bearer $SITE_DISPATCH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/desklamp-developers/video-skills-site/dispatches \
+            https://api.github.com/repos/clueso-ai/video-skills-site/dispatches \
             -d '{"event_type":"skills-updated"}'
           echo "Dispatched skills-updated to video-skills-site."

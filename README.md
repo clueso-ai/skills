@@ -94,19 +94,19 @@ All 55 skills require the Clueso MCP and nothing else.
 ### Any agent (skills CLI)
 
 ```bash
-npx skills add desklamp-developers/skills
+npx skills add clueso-ai/skills
 ```
 
 Or a single skill:
 
 ```bash
-npx skills add desklamp-developers/skills --skill brief-to-launch-video
+npx skills add clueso-ai/skills --skill brief-to-launch-video
 ```
 
 ### Claude Code (plugin marketplace)
 
 ```
-/plugin marketplace add desklamp-developers/skills
+/plugin marketplace add clueso-ai/skills
 /plugin install clueso-video-skills@clueso-video-skills
 ```
 
