@@ -10,7 +10,7 @@ description: >-
 license: Apache-2.0
 metadata:
   author: clueso
-  category: article-editing
+  category: docs-and-articles
   requires: clueso-mcp
   external-apis: none
   external-tools: none

@@ -9,7 +9,8 @@ description: >-
 license: Apache-2.0
 metadata:
   author: clueso
-  category: video-editing
+  category: quick-edits
+  subcategory: captions-and-accessibility
   requires: clueso-mcp
   external-apis: none
   external-tools: none

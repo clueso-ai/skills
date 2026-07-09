@@ -10,7 +10,8 @@ description: >-
 license: Apache-2.0
 metadata:
   author: clueso
-  category: video-editing
+  category: quick-edits
+  subcategory: repurposing
   requires: clueso-mcp
   external-apis: none
   external-tools: none
