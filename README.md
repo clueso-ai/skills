@@ -6,7 +6,7 @@ your agent can produce finished, exported videos.
 
 ## Skills
 
-All 55 skills require the Clueso MCP and nothing else.
+All 90 skills require the Clueso MCP and nothing else.
 
 ### Motion graphics
 
@@ -19,6 +19,7 @@ All 55 skills require the Clueso MCP and nothing else.
 | [stats-infographic-video](skills/stats-infographic-video) | Numbers → animated data story with counters and payoff scene |
 | [ui-concept-animation](skills/ui-concept-animation) | UI screenshot/mockup → animated interaction teaser |
 | [branded-intro-outro](skills/branded-intro-outro) | Logo + tagline → matched intro/outro stinger pair |
+| [explain-it-simply](skills/explain-it-simply) | Any complex topic → plain-language animated explainer, treatment chosen per beat |
 
 ### Create videos
 
@@ -35,6 +36,18 @@ All 55 skills require the Clueso MCP and nothing else.
 | [soft-skills-scenario-video](skills/soft-skills-scenario-video) | Behavioral topic → animated scenario story with takeaways |
 | [slides-to-video](skills/slides-to-video) | Slide deck → narrated video that doesn't feel like a deck |
 | [demo-for-every-persona](skills/demo-for-every-persona) | One master demo → persona-targeted variants |
+| [forum-answer-to-video](skills/forum-answer-to-video) | Q&A or forum answer → direct how-to video with gap honesty |
+| [chaptered-training-video](skills/chaptered-training-video) | Long training recording → labeled chapter sequence with silent title cards |
+| [crm-training-video](skills/crm-training-video) | Raw CRM screen recording → redacted, annotated training video |
+| [playbook-to-training-video](skills/playbook-to-training-video) | Written playbook → training video, with branching handled honestly |
+| [topic-to-training-video](skills/topic-to-training-video) | A topic or outline → sales training video with a confirmed learning objective |
+| [recordings-to-training-module](skills/recordings-to-training-module) | Several recordings → one cohesive, normalized training module |
+| [sop-deck-to-training-video](skills/sop-deck-to-training-video) | SOP slide deck → training video + condensed job aid |
+| [one-recording-full-launch-kit](skills/one-recording-full-launch-kit) | One feature recording → launch video + changelog blurb + social cutdown |
+| [recording-to-video-article](skills/recording-to-video-article) | One recording → polished video and a live help article, as equal deliverables |
+| [recording-to-rfp-response](skills/recording-to-rfp-response) | Walkthrough → RFP-response video + requirement-to-timestamp matrix |
+| [ticket-resolution-to-how-to-video](skills/ticket-resolution-to-how-to-video) | Support ticket screen-share → generalized, redacted public how-to |
+| [ticket-topics-to-video-batch](skills/ticket-topics-to-video-batch) | Top ticket topics → a batch of short deflection videos |
 
 ### Edit videos
 
@@ -46,6 +59,21 @@ All 55 skills require the Clueso MCP and nothing else.
 | [revoice-video](skills/revoice-video) | Rewrite the tone, pick a better voice, regenerate narration |
 | [localize-video](skills/localize-video) | Produce native-voice language variants of a finished video |
 | [repurpose-for-channels](skills/repurpose-for-channels) | One video → social cut + GIF + embed-ready versions |
+| [multilingual-captions](skills/multilingual-captions) | Translated captions in N languages, original audio untouched |
+| [batch-multi-language-export](skills/batch-multi-language-export) | One video → N dubbed language exports in one pass |
+| [video-dubbing-localization](skills/video-dubbing-localization) | Deep dubbing pass: glossary, register, and re-timed narration per language |
+| [compliance-training-localization](skills/compliance-training-localization) | Compliance training in every required language, load-bearing lines preserved |
+| [demo-by-vertical](skills/demo-by-vertical) | One base demo → industry-specific variants, reframed not relabeled |
+| [demo-cutdown](skills/demo-cutdown) | Full demo → one continuous social teaser at a target runtime |
+| [demo-trimmed-for-one-buyer](skills/demo-trimmed-for-one-buyer) | Multi-persona demo → just one buyer's screens, subtraction only |
+| [one-rollout-every-department](skills/one-rollout-every-department) | One rollout recording → department-specific training variants |
+| [self-navigable-sales-demo](skills/self-navigable-sales-demo) | Sales demo → async-watchable chapters organized by buyer decision points |
+| [raw-recording-to-branded-demo](skills/raw-recording-to-branded-demo) | A rep's raw recording → polished, on-brand, send-to-prospect demo |
+| [in-app-guidance-clip](skills/in-app-guidance-clip) | Walkthrough → short sound-off clip for tooltips and help widgets |
+| [live-session-to-on-demand-modules](skills/live-session-to-on-demand-modules) | Messy live session → clean on-demand modules, cleanup before splitting |
+| [webinar-to-highlight-clips](skills/webinar-to-highlight-clips) | Long webinar → the moments actually worth clipping, as standalone shorts |
+| [resize-for-social](skills/resize-for-social) | 16:9 project → 9:16 or 1:1 with every element reflowed |
+| [recording-to-email-drip-series](skills/recording-to-email-drip-series) | Onboarding recording → standalone per-email clips for a drip sequence |
 
 ### Quick edits
 
@@ -78,6 +106,9 @@ All 55 skills require the Clueso MCP and nothing else.
 | [smooth-transitions-pass](skills/smooth-transitions-pass) | Consistent, subtle transitions at every boundary |
 | [make-vertical-cut](skills/make-vertical-cut) | Reframe a landscape video for 9:16 with captions |
 | [extract-gif-moment](skills/extract-gif-moment) | Pull the best interaction as a looping GIF |
+| [add-ai-captions](skills/add-ai-captions) | Deep brand-styled captioning from a word-level transcript |
+| [precision-voiceover-sync](skills/precision-voiceover-sync) | Hand-tune narration timing so actions land on the spoken word |
+| [script-to-voiceover](skills/script-to-voiceover) | A plain script → generated narration, standalone or onto existing clips |
 
 ### Docs & articles
 
@@ -87,6 +118,10 @@ All 55 skills require the Clueso MCP and nothing else.
 | [refresh-article-screenshots](skills/refresh-article-screenshots) | Replace outdated screenshots at the same steps |
 | [annotate-article-screenshots](skills/annotate-article-screenshots) | Zoom, crop, blur, and arrow every screenshot |
 | [restructure-help-article](skills/restructure-help-article) | Rework an article for scanability and self-serve deflection |
+| [recording-to-help-article](skills/recording-to-help-article) | Screen recording → searchable help-center article, video optional |
+| [lecture-to-notes](skills/lecture-to-notes) | Lecture or talk → structured, illustrated study notes as a live article |
+| [video-to-article](skills/video-to-article) | Content or opinion video → article structured by its argument |
+| [video-to-job-aid](skills/video-to-job-aid) | Training video → condensed quick-reference job aid |
 
 ## Installation
 
