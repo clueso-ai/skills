@@ -1,9 +1,8 @@
-# Clueso Video Skills
+# Agent Skills for Video
 
 Agent Skills for creating and editing videos with [Clueso](https://clueso.io), built to
-run on **the Clueso MCP and nothing else** — no external APIs, no local binaries, no
-API keys. Install one, connect the Clueso MCP, and your agent can produce finished,
-exported videos.
+run on **the Clueso MCP and nothing else**. Install one, connect the Clueso MCP, and
+your agent can produce finished, exported videos.
 
 ## Skills
 
