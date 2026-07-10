@@ -148,7 +148,7 @@ npx skills add clueso-ai/skills --skill brief-to-launch-video
 
 Every skill here drives the [Clueso MCP](https://clueso.io). Connect it in your agent
 (e.g. via claude.ai connectors or your agent's MCP configuration) before running a
-skill. No other dependency is needed — that's the point.
+skill. No other dependency is needed.
 
 ## What's an Agent Skill?
 
