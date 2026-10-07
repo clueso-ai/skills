@@ -18,7 +18,7 @@
     "motion-graphics",
     "documentation"
   ],
-  "logo": "assets/logo.svg",
+  "logo": "assets/logo.png",
   "skills": "./skills/",
   "mcpServers": "./mcp.json",
   "category": "integrations"
