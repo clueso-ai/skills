@@ -144,11 +144,17 @@ npx skills add clueso-ai/skills --skill brief-to-launch-video
 /plugin install clueso-video-skills@clueso-video-skills
 ```
 
+### Cursor (plugin marketplace)
+
+Install **Clueso** from the [Cursor Marketplace](https://cursor.com/marketplace). The
+plugin bundles every skill here plus the Clueso MCP (`https://connect.clueso.io/mcp`),
+so there is nothing else to configure: sign in to Clueso when Cursor prompts you.
+
 ### Prerequisite: the Clueso MCP
 
 Every skill here drives the [Clueso MCP](https://clueso.io). Connect it in your agent
 (e.g. via claude.ai connectors or your agent's MCP configuration) before running a
-skill. No other dependency is needed.
+skill (the Cursor plugin connects it for you). No other dependency is needed.
 
 ## What's an Agent Skill?
 
@@ -159,6 +165,8 @@ format these skills follow, and [`template/`](template) for a starter skill.
 ## Repository structure
 
 ```
+.cursor-plugin/  Cursor plugin manifest (skills + mcp.json)
+.claude-plugin/  Claude Code plugin marketplace
 skills/          One folder per skill (SKILL.md + optional references/)
 spec/            The frontmatter + authoring spec skills in this repo follow
 template/        Starter template for new skills

@@ -1,0 +1,25 @@
+{
+  "name": "clueso",
+  "displayName": "Clueso",
+  "description": "Create and edit videos with Clueso from Cursor: the Clueso MCP plus 90 video skills for launch videos, explainers, product demos, training videos and help articles.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Clueso"
+  },
+  "homepage": "https://clueso.io/mcp",
+  "repository": "https://github.com/clueso-ai/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "clueso",
+    "video",
+    "mcp",
+    "screen-recording",
+    "explainer",
+    "motion-graphics",
+    "documentation"
+  ],
+  "logo": "assets/logo.png",
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "category": "integrations"
+}
